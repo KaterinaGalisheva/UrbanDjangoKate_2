@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зарегистрированные пользователи и Игры</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px; /* Отступ между таблицами */
+        }
+
+        th, td {
+            border: 1px solid #072708;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #659e6f;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Зарегистрированные пользователи</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Имя</th>
+            <th>Баланс</th>
+            <th>Возраст</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for buyer in Buyers %}
+            <tr>
+                <td>{{ buyer.id }}</td>
+                <td>{{ buyer.name|title }}</td>
+                <td>{{ buyer.balance }}</td>
+                <td>{{ buyer.age }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h1>Игры в наличии</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Размер</th>
+            <th>Описание</th>
+            <th>Возрастное ограничение</th>
+            <th>Покупатель</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for game in Games %}
+            <tr>
+                <td>{{ game.title|title }}</td>
+                <td>{{ game.cost }}</td>
+                <td>{{ game.size }}</td>
+                <td>{{ game.description }}</td>
+                <td>{{ game.age_limited }}</td>
+                <td>{{ game.buyer }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
+
+

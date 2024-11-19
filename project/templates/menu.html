@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameShop</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'style.css'%}">
+</head>
+<body>
+    <pagenane>
+        {% block pagename %}
+        <h1>Добро пожаловать</h1>
+        {% endblock %}
+    </pagenane>
+
+    <menu>
+        {% block menu %}
+        <h2>Меню</h2>
+        <h3>На главную страницу</h3>
+        <button class='buttonmenu'onclick="window.location.href='http://127.0.0.1:8000/primary/'">главная</button>
+        <h3>В магазин</h3>
+        <button class='buttonmenu'onclick="window.location.href='http://127.0.0.1:8000/store/'">магазин</button>
+        <h3>Перейти в корзину</h3>
+        <button class='buttonmenu' onclick="window.location.href='http://127.0.0.1:8000/cart/'">корзина</button>
+        {% endblock %}
+    </menu>
+
+    <content>
+        {% block content %}
+        <h3>Содержание страницы</h3>
+        {% endblock %}
+    </content>
+    
+</body>
+</html>

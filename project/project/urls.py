@@ -16,24 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from app_task1.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('database/', database),
+    path('cart/', index_cart),
+    path('primary/', index_primary),
+    path('store/', index_store),
+    path('sign_up/', sign_up),
 ]
 
-'''
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('function/', index),
-    path('class/', index2.as_view()),
-    path('primary/', TemplateView.as_view(template_name = 'third_task/primary.html')),
-    path('store/', TemplateView.as_view(template_name = 'third_task/store.html')),
-    path('cart/', TemplateView.as_view(template_name = 'third_task/cart.html')),
-    path('cart4/', index_cart),
-    path('primary4/', index_primary),
-    path('store4/', index_store),
-    path('html_sign_up/', sign_up_by_html),
-    path('django_sign_up/', sign_up_by_django),
-    
-]
-'''

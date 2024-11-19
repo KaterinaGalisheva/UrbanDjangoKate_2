@@ -1,0 +1,20 @@
+{% extends 'menu.html'%}
+
+{% block pagename %}
+    {{block.super}}
+    <h1>Главная страница</h1>
+{% endblock %}
+
+{% block menu %}
+    <h3>Регистрация</h3>
+    <button class='buttonmenu'onclick="window.location.href='http://127.0.0.1:8000/sign_up/'">зарегистрироваться</button>
+    {{block.super}}
+{% endblock %}
+
+{% block content %}
+
+<h2>Перейти в базу данных</h2>
+<h3>Только для Администратора</h3>
+<button class='buttonmenu' onclick="window.location.href='http://127.0.0.1:8000/database/'">база данных</button>
+
+{% endblock %}

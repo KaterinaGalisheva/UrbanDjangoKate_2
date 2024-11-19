@@ -5,7 +5,7 @@ from django.db import models
 
 class Buyer(models.Model):
     name = models.CharField(max_length=15)
-    balance = models.DecimalField(decimal_places=2 , max_digits=15)
+    balance = models.DecimalField(decimal_places=2, max_digits=15, blank=True, null=True)
     age = models.IntegerField()
 
 

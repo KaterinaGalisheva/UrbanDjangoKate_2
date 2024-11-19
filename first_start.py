@@ -52,6 +52,41 @@
 # cd ..
 
 
+'''QuerySet запросы в БД (трансформация питона в sql)'''
+
+# Открыть необходимый терминал
+# python manage.py shell
+
+# импорт таблицы
+# from app.models import (имя таблицы)
+
+# Все объекты в таблице
+# Tablename.objects.all()
+
+# Создание объекта
+# Tablename.objects.create(name=newname, age=newage)
+
+# Фильтрация, найти какой-то параметр
+# Tablename.objects.filter(name='')
+
+# Обновить
+# Tablename.objects.filter(name='').update(name='secondname')
+
+# Количество объектов в базе данных
+# Tablename.objects.count()
+
+# Обращение к объекту через переменную по заданному параметру
+# а = Tablename.objects.get(id=12)
+# a.delete() или другие методы
+
+# а = Tablename.objects.all() переменная со всеми объектами
+# a.delete() или другие методы
+
+# Присвоить значение из другой таблицы
+# Tablename.objects.get(id=1).othertablefield.set(username)
+# Game.objects.get(id=2).buyer.set((1, )) 
+# Game.objects.get(id=1).buyer.set((first_buyer, second_buyer)) - 
+# здесь игра c id=1 приобретается покупателями first_buyer и second_buyer.
 
 
 
