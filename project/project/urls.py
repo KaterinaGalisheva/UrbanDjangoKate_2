@@ -25,5 +25,6 @@ urlpatterns = [
     path('primary/', index_primary),
     path('store/', index_store),
     path('sign_up/', sign_up),
+    path('paginator/', paginator)
 ]
 

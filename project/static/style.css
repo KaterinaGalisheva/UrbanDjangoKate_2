@@ -78,3 +78,42 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #0056b3;
 }
+.pagination {
+    display: flex;
+    justify-content: center; /* Центрируем элементы */
+    align-items: center; /* Выравниваем по вертикали */
+    margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+.step-links {
+    display: flex;
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0;
+}
+
+.pagination-link {
+    margin: 0 5px; /* Отступы между элементами */
+    padding: 10px 15px; /* Внутренние отступы */
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #007bff; /* Цвет текста */
+    border: 1px solid #007bff; /* Обводка */
+    border-radius: 4px; /* Скругление углов */
+    background-color: white; /* Цвет фона */
+    transition: background-color 0.3s, color 0.3s; /* Плавный переход */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для ячейки */
+}
+
+.pagination-link:hover {
+    background-color: #007bff; /* Цвет фона при наведении */
+    color: white; /* Цвет текста при наведении */
+}
+
+.current {
+    margin: 0 5px; /* Отступы между элементами */
+    padding: 10px 15px; /* Внутренние отступы */
+    font-weight: bold; /* Жирный текст для текущей страницы */
+    color: #333; /* Цвет текста для текущей страницы */
+    background-color: #f0f0f0; /* Цвет фона для текущей страницы */
+    border: 1px solid #ccc; /* Обводка для текущей страницы */
+    border-radius: 4px; /* Скругление углов */
+}

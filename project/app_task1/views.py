@@ -1,11 +1,13 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
-from .models import *
+from django.core.paginator import Paginator
+
 from django.http import HttpResponse
 from .forms import RegistrationForm
+from .models import *
 
-# Create your views here.
+
 # функция для компановки всего вместе с базами данных
+# отображение базы данных на отдельной странице
 def database(request):
     # подключение моделей из базы данных и сохранение
     Buyers = Buyer.objects.all()
@@ -20,9 +22,6 @@ def database(request):
 
 
 
-
-
-# Create your views here
 # функции для отображения рядовых страниц
 def index_cart(request):
     return render(request, 'cart.html')
@@ -37,17 +36,14 @@ def index_store(request):
 
 
 
-
-
-
-# Create your views here
 # функции для регистрации пользователей      
 def sign_up(request):
     users = Buyer.objects.all()
     info = {}
-    context = {'info':info,
-               'users':users
-               }
+    context = {
+        'info':info,
+        'users':users
+     }
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
 
@@ -76,6 +72,23 @@ def sign_up(request):
 
 
 
+# функция для пагинатора, перекидывание информации на межстраницы
+def paginator(request):
+    # Получаем количество элементов на странице, по умолчанию 2
+    items_per_page = int(request.GET.get('items_per_page', 2))
+    # достается список игр
+    games = Game.objects.all().order_by('id')
+    # что размещается на страницах и в каком количестве
+    paginator = Paginator(games, items_per_page)
+    # для перемещения
+    page_number = request.GET.get('page')
+    # страница как объект, передался номер страницы
+    page_obj = paginator.get_page(page_number)
+    context = {
+        'page_obj': page_obj, 
+        'request': request
+    }
+    return render(request, 'paginator.html', context)
 
   
         
