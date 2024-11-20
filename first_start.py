@@ -85,9 +85,16 @@
 # Присвоить значение из другой таблицы
 # Tablename.objects.get(id=1).othertablefield.set(username)
 # Game.objects.get(id=2).buyer.set((1, )) 
+# Game.objects.get(id=6).buyer.set((8, 7)) 
 # Game.objects.get(id=1).buyer.set((first_buyer, second_buyer)) - 
 # здесь игра c id=1 приобретается покупателями first_buyer и second_buyer.
 
+
+
+'''Работа с панелью администратора'''
+# Регистрация администратора (после миграций)
+# python manage.py createsuperuser
+# записать имя пользователя и пароль
 
 
 
